@@ -14,6 +14,7 @@ public class Student extends Person {
     public String getMajor() {
         return major;
     }
+    
     public void setMajor(String major) {
         this.major = major;
     }
