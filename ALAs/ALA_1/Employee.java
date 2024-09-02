@@ -11,6 +11,33 @@ public class Employee extends Person {
 
     public Employee() {
         super();
-        position = ""
+        position = "None";
+        salary = 0.0;
+    }
+
+    public Employee(int id, String name, String address, String phone, String email, String position, double salary) {
+        super(id, name, address, phone, email);
+        this.position = position;
+        this.salary = salary;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public String toString() {
+        return (super.toString() + "Position: " + position + "\nSalary: " + salary + "\n");
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 }
