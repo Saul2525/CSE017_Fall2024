@@ -23,7 +23,7 @@ public class Student extends Person {
     }
 
     public String toString() {
-        return (super.toString() + "Major: " + major + "\n");
+        return (super.toString() + String.format("Major: %s\n", major));
     }
 
     public void setMajor(String major) {

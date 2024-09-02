@@ -42,8 +42,7 @@ public abstract class Person {
     }
 
     public String toString() {
-        String str = String.format("ID: %d\nName: %s\nAddress: %s\nPhone: %s\nEmail: %s\n", id, name, address, phone, email);
-        return str;
+        return String.format("ID: %d\nName: %s\nAddress: %s\nPhone: %s\nEmail: %s\n", id, name, address, phone, email);
     }
 
     public void setID(int id) {

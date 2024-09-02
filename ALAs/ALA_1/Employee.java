@@ -30,7 +30,7 @@ public class Employee extends Person {
     }
 
     public String toString() {
-        return (super.toString() + "Position: " + position + "\nSalary: " + salary + "\n");
+        return (super.toString() + String.format("Position: %s\nSalary: %.2f\n", position, salary));
     }
 
     public void setPosition(String position) {
