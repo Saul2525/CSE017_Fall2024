@@ -6,6 +6,9 @@
 */
 
 public abstract class Person {
+    protected int id;
+    protected String name, address, phone, email;
+    
     protected Person() {
         this(0, "none", "none", "none", "none");
     }
