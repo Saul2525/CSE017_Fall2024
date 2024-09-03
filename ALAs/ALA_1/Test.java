@@ -27,6 +27,10 @@ public class Test {
                     }
                 }
             }
+
+            Person temp = people[i];
+            people[i] = people[minIndex];
+            people[minIndex] = temp;
         }
     }
 
@@ -37,6 +41,13 @@ public class Test {
         people[1] = new Employee(334422110, "Beth Down", "234 Main Street, Philadelphia", "484-222-4433", "bdown@gmail.com", "System Administrator", 75000.00);
         people[2] = new Faculty(222222222, "Mark Jones", "21 Orchid Street, Bethlehem", "610-333-2211", "mjones@gmail.com", "Faculty", 100000.00, "Associate Professor");
 
+        System.out.println("Original List:");
         printArray(people);
+
+        System.out.println("List sorted by name:");
+        sortArray(people, true);
+
+        System.out.println("List sorted by id:");
+        sortArray(people, false);
     }
 }
