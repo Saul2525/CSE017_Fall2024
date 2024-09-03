@@ -12,7 +12,22 @@ public class Test {
         }
     }
     
-    public static void sortArray(Person[] people) {
+    public static void sortArray(Person[] people, boolean type) {
+        for (int i = 0; i < people.length; i++) {
+            int minIndex = i;
+
+            for (int j = i + 1; j < people.length; j++) {
+                if (type) {
+                    if (people[j].getName().compareTo(people[minIndex].getName()) < 0) {
+                        minIndex = j;
+                    }
+                } else {
+                    if (people[j].getID() < people[minIndex].getID()) {
+                        minIndex = j;
+                    }
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
