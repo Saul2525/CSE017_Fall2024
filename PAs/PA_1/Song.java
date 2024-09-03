@@ -25,6 +25,11 @@ public class Song extends Media {
     }
 
     public String toString() {
-        return (super.toString() + String.format(""));
+        String type = "Song";
+        return String.format("%-5s\t%s\t%-15s", type, super.toString(), artist);
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 }
