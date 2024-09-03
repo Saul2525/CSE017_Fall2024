@@ -31,7 +31,7 @@ public class Test {
             Person temp = people[i];
             people[i] = people[minIndex];
             people[minIndex] = temp;
-            System.out.println(temp);
+            System.out.println(people[i]);
         }
     }
 
