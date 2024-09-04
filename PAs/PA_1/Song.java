@@ -5,8 +5,6 @@
     IDE: VSCode; JDK: 11
 */
 
-package PAs.PA_1;
-
 public class Song extends Media {
     private String artist;
 

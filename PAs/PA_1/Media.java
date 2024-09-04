@@ -5,8 +5,6 @@
     IDE: VSCode; JDK: 11
 */
 
-package PAs.PA_1;
-
 public abstract class Media {
     private String title, category;
     private int year;
