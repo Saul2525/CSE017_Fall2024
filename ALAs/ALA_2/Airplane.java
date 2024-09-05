@@ -19,7 +19,7 @@ public class Airplane {
         seatMap = new char[9][8];
 
         for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 8; i++) {
+            for (int j = 0; j < 8; j++) {
                 seatMap[i][j] = '.';
             }
         }
@@ -35,7 +35,7 @@ public class Airplane {
             Scanner readFile = new Scanner(new File(fileName));
 
             for (int i = 0; i < 9; i++) {
-                for (int j = 0; j < 8; i++) {
+                for (int j = 0; j < 8; j++) {
                     seatMap[i][j] = readFile.next().charAt(0);
                 }
             }
@@ -43,7 +43,7 @@ public class Airplane {
             readFile.close();
         } catch(FileNotFoundException e) {
             for (int i = 0; i < 9; i++) {
-                for (int j = 0; j < 8; i++) {
+                for (int j = 0; j < 8; j++) {
                     seatMap[i][j] = '.';
                 }
             }
@@ -106,7 +106,7 @@ public class Airplane {
         String out = "\tA\tB\tC\tD\tE\tF\tG\tH\n";
 
         for (int i = 0; i < 9; i++) {
-            out += i++ + "\t";
+            out += (i + 1) + "\t";
 
             for (int j = 0; j < 8; j++) {
                 out += seatMap[i][j] + "\t";
