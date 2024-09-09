@@ -110,7 +110,7 @@ public class MediaList {
                 Media currentMedia = media[i];
                 int j = i;
 
-                while ((j > 0) && (currentMedia.getTitle().compareTo(media[j - 1].getTitle()) > 0)) {
+                while ((j > 0) && (currentMedia.getTitle().compareTo(media[j - 1].getTitle()) < 0)) {
                     media[j] = media[j - 1];
                     j--;
                 }
@@ -123,7 +123,7 @@ public class MediaList {
                 Media currentMedia = media[i];
                 int j = i;
 
-                while ((j > 0) && (currentMedia.getCategory().compareTo(media[j - 1].getCategory()) > 0)) {
+                while ((j > 0) && (currentMedia.getCategory().compareTo(media[j - 1].getCategory()) < 0)) {
                     media[j] = media[j - 1];
                     j--;
                 }
