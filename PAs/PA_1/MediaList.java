@@ -139,6 +139,7 @@ public class MediaList {
     }
 
     public String toString() {
+        System.out.println("Type\tTitle\tCategory\tYear\tSize(KB)\tArtist/Director Revenue");
         String tempString = "";
 
         for (int i = 0; i < count; i++) {
