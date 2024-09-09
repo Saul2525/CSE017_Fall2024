@@ -90,7 +90,7 @@ public class MediaList {
             for (int k = 0; k < count; k++) {
                 if (media[k].getTitle().equals(title)) {
 
-                    for (int j = k; k < count - 1; j++) {
+                    for (int j = k; k < count - 2; j++) {
                         media[j] = media[j + 1];
                     }
                     media[count - 1] = null;
