@@ -150,6 +150,10 @@ public class MediaList {
         }
     }
 
+    public int size() {
+        return count;
+    }
+
     public String toString() {
         System.out.println("Type\tTitle\tCategory\tYear\tSize(KB)\tArtist/Director Revenue");
         String tempString = "";
