@@ -141,7 +141,7 @@ public class MediaList {
         String tempString = "";
 
         for (int i = 0; i < count; i++) {
-            tempString += media[i].toString() + "\n";
+            tempString = media[i].toString() + "\n";
         }
 
         return tempString;
