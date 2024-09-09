@@ -12,31 +12,24 @@ public class MediaList {
     public MediaList() {
         media = new Media[10];
         count = 0;
-
-        System.out.printf("A new media list was created with %d media\n", count);
     }
 
     public boolean add(Media media) {
-        if (count < 9) {
+        if (count < 10) {
             this.media[count++] = media;
-
-            System.out.printf("%d media added to the media list\n", count);
             return true;
         }
 
-        System.out.println("The media list is full. Cannot add new media");
         return false;
     }
 
     public Media findTitle(String title) {
         for (int i = 0; i < count; i++) {
             if (media[i].getTitle().equals(title)) {
-                System.out.printf("Media found with title \"%s\":\n", title);
                 return media[i];
             }
         }
 
-        System.out.printf("No media found with title \"%s\"\n", title);
         return null;
     }
 
@@ -60,11 +53,9 @@ public class MediaList {
                 }
             }
 
-            System.out.printf("%d media found with category \"%s\"\n", categoryCount, category);
             return tempMedia;
         }
 
-        System.out.printf("No media found with category \"%s\"\n", category);
         return null;
     }
 
@@ -88,11 +79,9 @@ public class MediaList {
                 }
             }
 
-            System.out.printf("%d media found with year \"%s\"\n", yearCount, year);
             return tempMedia;
         }
 
-        System.out.printf("No media found with year \"%d\"\n", year);
         return null;
     }
 
@@ -100,7 +89,6 @@ public class MediaList {
         if (count > 0) {
             for (int k = 0; k < count; k++) {
                 if (media[k].getTitle().equals(title)) {
-                    System.out.printf("Media found with title \"%s\"", title);
 
                     for (int j = k; k < count - 1; j++) {
                         media[j] = media[j + 1];
@@ -108,19 +96,15 @@ public class MediaList {
                     media[count - 1] = null;
                     count--;
 
-                    System.out.println("Media removed successfully");
                     return true;
                 }
             }
         }
 
-        System.out.printf("Media with title \"%s\" not found\n", title);
         return false;
     }
 
     public void sort(boolean sortType) {
-        System.out.println("Type\tTitle\tCategory\tYear\tSize(KB)\tArtist/Director Revenue");
-
         if (sortType) {
             for (int i = 0; i < count; i++) {
                 Media currentMedia = media[i];
@@ -155,7 +139,6 @@ public class MediaList {
     }
 
     public String toString() {
-        System.out.println("Type\tTitle\tCategory\tYear\tSize(KB)\tArtist/Director Revenue");
         String tempString = "";
 
         for (int i = 0; i < count; i++) {
