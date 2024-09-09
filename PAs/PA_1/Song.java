@@ -22,7 +22,7 @@ public class Song extends Media {
         return artist;
     }
 
-    public String toString() {
+    @Override public String toString() {
         String type = "Song";
         return String.format("%-5s\t%s\t%-15s", type, super.toString(), artist);
     }

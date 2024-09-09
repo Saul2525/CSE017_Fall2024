@@ -33,7 +33,7 @@ public class Movie extends Media {
         return java.text.NumberFormat.getCurrencyInstance(new java.util.Locale("en", "US")).format(revenue);
     }
 
-    public String toString() {
+    @Override public String toString() {
         String type = "Movie";
         return String.format("%-5s\t%s\t%-15s\t%s", type, super.toString(), director, formatMoney());
     }
