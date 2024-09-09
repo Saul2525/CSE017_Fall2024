@@ -116,7 +116,6 @@ public class MediaList {
                 }
 
                 media[j] = currentMedia;
-                currentMedia.toString();
             }
         } else {
             for (int i = 0; i < count; i++) {
@@ -129,7 +128,6 @@ public class MediaList {
                 }
 
                 media[j] = currentMedia;
-                currentMedia.toString();
             }
         }
     }
@@ -139,7 +137,7 @@ public class MediaList {
     }
 
     public String toString() {
-        System.out.println("Type\tTitle\t\tCategory\tYear\tSize(KB)\tArtist/Director Revenue");
+        System.out.println("Type\tTitle\t\t\t\t\t\t\t\tCategory\t\tYear\tSize(KB)\tArtist/Director\tRevenue");
         String tempString = "";
 
         for (int i = 0; i < count; i++) {
