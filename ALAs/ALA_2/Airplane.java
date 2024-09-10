@@ -5,8 +5,6 @@
     IDE: VSCode; JDK: 11
 */
 
-package ALAs.ALA_2;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;

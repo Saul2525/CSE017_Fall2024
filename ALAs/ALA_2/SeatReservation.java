@@ -5,8 +5,6 @@
     IDE: VSCode; JDK: 11
 */
 
-package ALAs.ALA_2;
-
 public class SeatReservation {
     public static void main(String[] args) {
     }
