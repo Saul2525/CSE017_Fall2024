@@ -10,21 +10,23 @@ import java.util.Scanner;
 
 public class SeatReservation {
     public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
         Airplane airplane = new Airplane("seatmap.txt");
-        System.out.println(airplane.toString());
-        System.out.println("Welcome, user. Please make a selection.\n1: Reserve a Seat\n2: Free a Seat\n3: Quit Program");
 
         int selection = 0;
         String seatNumber = "";
         boolean programMenu = true;
-        while (programMenu == true) {
-            Scanner scnr = new Scanner(System.in);
-            selection = scnr.nextInt();
+        do {
+            System.out.println(airplane.toString());
+            System.out.println("Welcome, user. Please make a selection.\n1: Reserve a Seat\n2: Free a Seat\n3: Quit Program");
 
             try {
+                selection = scnr.nextInt();
+                System.out.println();
+
                 switch (selection) {
                     case 1:
-                        System.out.println("Enter a seat number: ");
+                        System.out.print("Enter a seat number: ");
                         seatNumber = scnr.next();
 
                         if (airplane.reserveSeat(seatNumber)) {
@@ -32,9 +34,11 @@ public class SeatReservation {
                         } else {
                             System.out.printf("%s already reserved.\n", seatNumber);
                         }
+
+                        System.out.println();
                         break;
                     case 2:
-                        System.out.println("Enter a seat number: ");
+                        System.out.print("Enter a seat number: ");
                         seatNumber = scnr.next();
 
                         if (airplane.freeSeat(seatNumber)) {
@@ -42,6 +46,8 @@ public class SeatReservation {
                         } else {
                             System.out.printf("%s already freed.\n", seatNumber);
                         }
+
+                        System.out.println();
                         break;
                     case 3:
                         airplane.saveMap("seatmap.txt");
@@ -49,17 +55,17 @@ public class SeatReservation {
                         programMenu = false;
                         break;
                     default:
-                        System.out.println("Invalid selection. Please enter a number from 1-3.");
-                        scnr.next();
+                        System.out.println("Invalid selection. Please enter a number from 1 to 3.");
+                        break;
                 }
             } catch(InvalidSeatException e) {
                 System.out.println(e.getMessage());
             } catch(InputMismatchException e) {
-                System.out.println("Invalid input.");
+                System.out.println("\nInvalid input.");
                 scnr.next();
             }
-            
-            scnr.close();
-        }
+        } while (programMenu == true);
+        
+        scnr.close();
     }
 }

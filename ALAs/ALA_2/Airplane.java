@@ -52,7 +52,7 @@ public class Airplane {
         if (seatNumber.matches("[1-9][A-H]")) {
             return true;
         } else {
-            throw new InvalidSeatException(String.format("Invalid seat number: %s. Must be [1-9][A-H].", seatNumber));
+            throw new InvalidSeatException(String.format("Invalid seat number: %s. Must be [1-9][A-H].\n", seatNumber));
         }
     }
 
