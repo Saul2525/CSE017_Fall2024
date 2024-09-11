@@ -18,15 +18,14 @@ public class SeatReservation {
         boolean programMenu = true;
         do {
             System.out.println(airplane.toString());
-            System.out.println("Welcome, user. Please make a selection.\n1: Reserve a Seat\n2: Free a Seat\n3: Quit Program");
+            System.out.println("Welcome, user. Please make a selection.\n1: Reserve a Seat\n2: Free a Seat\n3: Quit");
 
             try {
                 selection = scnr.nextInt();
-                System.out.println();
 
                 switch (selection) {
                     case 1:
-                        System.out.print("Enter a seat number: ");
+                        System.out.print("\nEnter a seat number: ");
                         seatNumber = scnr.next();
 
                         if (airplane.reserveSeat(seatNumber)) {
@@ -38,7 +37,7 @@ public class SeatReservation {
                         System.out.println();
                         break;
                     case 2:
-                        System.out.print("Enter a seat number: ");
+                        System.out.print("\nEnter a seat number: ");
                         seatNumber = scnr.next();
 
                         if (airplane.freeSeat(seatNumber)) {
@@ -50,12 +49,13 @@ public class SeatReservation {
                         System.out.println();
                         break;
                     case 3:
+                        System.out.println("\nThank you for using my airplane seat reservation program.");
                         airplane.saveMap("seatmap.txt");
 
                         programMenu = false;
                         break;
                     default:
-                        System.out.println("Invalid selection. Please enter a number from 1 to 3.");
+                        System.out.println("\nInvalid selection. Please enter a number from 1-3.\n");
                         break;
                 }
             } catch(InvalidSeatException e) {
@@ -65,7 +65,7 @@ public class SeatReservation {
                 scnr.next();
             }
         } while (programMenu == true);
-        
+
         scnr.close();
     }
 }
