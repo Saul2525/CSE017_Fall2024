@@ -10,9 +10,15 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+/**
+ * A class that deals with reserving, freeing, and printing an map of an airplane.
+*/
 public class Airplane {
     private char[][] seatMap;
 
+    /**
+     * Creates a airplane. Default configuration.
+    */
     public Airplane() {
         seatMap = new char[9][8];
 
@@ -23,11 +29,19 @@ public class Airplane {
         }
     }
 
+    /**
+     * Creates a airplane. Reads a txt file to create the map.
+     * @param fileName The txt file's name.
+    */
     public Airplane(String fileName) {
         seatMap = new char[9][8];
         readMap(fileName);
     }
 
+    /**
+     * Reads a txt to create the map of the airplane. Otherwise, creates a blank map.
+     * @param fileName The txt file's name.
+    */
     private void readMap(String fileName) {
         try {
             Scanner readFile = new Scanner(new File(fileName));
@@ -48,6 +62,12 @@ public class Airplane {
         }
     }
 
+    /**
+     * Checks if the user's input is a valid seat number.
+     * @param seatNumber The user's inputted seat number.
+     * @return True if the user's inputted seat number is valid. False otherwise.
+     * @throws InvalidSeatException A String stating the user's inputted seat number is invalid.
+    */
     private boolean checkSeatNumber(String seatNumber) throws InvalidSeatException {
         if (seatNumber.matches("[1-9][A-H]")) {
             return true;
@@ -56,6 +76,12 @@ public class Airplane {
         }
     }
 
+    /**
+     * Reserves a seat for the user on the airplane.
+     * @param seatNumber The user's inputted seat number.
+     * @return True if the reservation of the user's choice was successful. False otherwise.
+     * @throws InvalidSeatException If the user's inputted seat number was invalid.
+    */
     public boolean reserveSeat(String seatNumber) throws InvalidSeatException {
         if (checkSeatNumber(seatNumber)) {
             int row = seatNumber.charAt(0) - '1';
@@ -70,6 +96,12 @@ public class Airplane {
         return false;
     }
 
+    /**
+     * Frees up a seat for the user on the airplane.
+     * @param seatNumber The user's inputted seat number.
+     * @return True if the seat of the user was freed up. False otherwise.
+     * @throws InvalidSeatException If the user's inputted seat number was invalid.
+    */
     public boolean freeSeat(String seatNumber) throws InvalidSeatException {
         if (checkSeatNumber(seatNumber)) {
             int row = seatNumber.charAt(0) - '1';
@@ -84,6 +116,10 @@ public class Airplane {
         return false;
     }
 
+    /**
+     * Saves the current state of the airplane.
+     * @param fileName The txt file's name.
+    */
     public void saveMap(String fileName) {
         try {
             PrintWriter writerFile = new PrintWriter(new File(fileName));
@@ -100,6 +136,9 @@ public class Airplane {
         }
     }
 
+    /**
+     * Prints out the current state of the plane.
+    */
     public String toString() {
         String out = "\tA\tB\tC\tD\tE\tF\tG\tH\n";
 

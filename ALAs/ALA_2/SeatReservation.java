@@ -8,6 +8,9 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * A class that deals with reservations on an airplane.
+*/
 public class SeatReservation {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
