@@ -25,7 +25,7 @@ public abstract class Shape implements Cloneable, Comparable<Shape>, Scalable {
     }
 
     public String toString() {
-        return "";
+        return String.format("%-10s", color);
     }
 
     public int compareTo(Shape otherShape) {
