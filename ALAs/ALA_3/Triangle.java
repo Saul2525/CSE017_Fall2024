@@ -53,7 +53,7 @@ public class Triangle extends Shape {
     }
 
     public double getArea() {
-        double s = getPerimeter() / 2;
+        double s = (getPerimeter() / 2);
         return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
     }
 
