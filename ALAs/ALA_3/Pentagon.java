@@ -38,5 +38,11 @@ public class Pentagon extends Shape {
         return (5.0 * side);
     }
 
-    public 
+    public Object clone() {
+        return new Pentagon(getColor(), side);
+    }
+
+    public void scale(double f) {
+        side *= f;
+    }
 }
