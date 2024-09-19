@@ -5,6 +5,9 @@
     IDE: VSCode; JDK: 11
 */
 
+/**
+ * A interface that contains a variable that deals with the scaling of shapes.
+*/
 public interface Scalable {
     public void scale(double f);
 }
