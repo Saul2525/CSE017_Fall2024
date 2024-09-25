@@ -23,7 +23,6 @@ public class Movie extends Media {
 
     /**
      * Creates a movie with the specified title, category, year, size, director, and revenue.
-     * 
      * @param title The movie's name.
      * @param category The movie's genre.
      * @param year The movie's year of release.
