@@ -60,7 +60,7 @@ public class Recursion {
         Scanner scnr = new Scanner(System.in);
 
         System.out.println("Enter a string:");
-        String str = scnr.next();
+        String str = scnr.nextLine();
         System.out.println("Enter a character:");
         char c = scnr.next().charAt(0);
 

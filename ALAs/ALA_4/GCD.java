@@ -5,9 +5,18 @@
     IDE: VSCode; JDK: 11
 */
 
+/**
+ * A class that finds the GCD of two random integers using four different techniques.
+*/
 public class GCD {
     public static int iter1, iter2, iter3, iter4;
 
+    /**
+     * A method that finds the GCD of two integers starting from 1 upwards.
+     * @param m A integer.
+     * @param n Another integer.
+     * @return Returns the GCD of the two integers plugged in.
+    */
     public static int gcd_1(int m, int n) {
         int divisor = 1;
         iter1 = 0;
@@ -23,6 +32,12 @@ public class GCD {
         return divisor;
     }
 
+    /**
+     * A method that finds the GCD of two integers starting from n downwards.
+     * @param m A integer.
+     * @param n Another integer.
+     * @return Returns the GCD of the two integers plugged in.
+    */
     public static int gcd_2(int m, int n) {
         int divisor = 1;
         iter2 = 0;
@@ -39,6 +54,12 @@ public class GCD {
         return divisor;
     }
 
+    /**
+     * A method that finds the GCD of two integers less than or equal to n/2.
+     * @param m A integer.
+     * @param n Another integer.
+     * @return Returns the GCD of the two integers plugged in.
+    */
     public static int gcd_3(int m, int n) {
         int divisor = 1;
         iter3 = 0;
@@ -59,6 +80,12 @@ public class GCD {
         return divisor;
     }
 
+    /**
+     * A method that replicates Euclid's GCD recursive algorithm.
+     * @param m A integer.
+     * @param n Another integer.
+     * @return Returns the GCD of the two integers plugged in.
+    */
     public static int gcd_4(int m, int n) {
         iter4++;
 
@@ -69,6 +96,9 @@ public class GCD {
         }
     }
 
+    /**
+     * A method that compares and prints the amount of time that each GCD method takes.
+    */
     public static void compareExecutionTime() {
         for (int i = 0; i < 20; i++) {
             int num1 = (int)(Math.random() * 1000000);
@@ -104,6 +134,9 @@ public class GCD {
         }
     }
 
+    /**
+     * A method that compares and prints the amount of iterations that each GCD method takes.
+    */
     public static void compareIterations() {
         for (int i = 0; i < 20; i++) {
             int num1 = (int)(Math.random() * 1000000);
@@ -136,3 +169,9 @@ public class GCD {
         compareIterations();
     }
 }
+
+/*
+ * The difference between the comparison using the theoretical algorithm analysis versus the experimental measurement of the
+ * execution time or the number of iterations is that theoretical analysis useful for understanding the time and space complexity
+ * of an algorithm, while the experimental measurement is useful for understanding real-world performances between different hardware.
+*/
