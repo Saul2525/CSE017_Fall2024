@@ -1,3 +1,10 @@
+/*
+    Saul Toribio
+    10/3/24
+    CSE017 Fall 2024: ALA 5
+    IDE: VSCode; JDK: 11
+*/
+
 public class Pair<E1, E2> {
     private E1 first;
     private E2 second;
@@ -7,11 +14,11 @@ public class Pair<E1, E2> {
         second = s;
     }
 
-    public E1 getE1() {
+    public E1 getFirst() {
         return first;
     }
 
-    public E2 getE2() {
+    public E2 getSecond() {
         return second;
     }
 
@@ -30,7 +37,7 @@ public class Pair<E1, E2> {
     public boolean equals(Object o) {
         if (o instanceof Pair) {
             Pair<E1, E2> p = (Pair) o;
-            return this.first.equals(p.first) && this.second.equals(p.second);
+            return (this.first.equals(p.first) && this.second.equals(p.second));
         }
 
         return false;
