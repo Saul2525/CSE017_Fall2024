@@ -7,7 +7,13 @@
 
 import java.util.Comparator;
 
+/**
+ * A generic class that compares the first generic object of two pairs.
+*/
 public class ComparatorByFirst<E1 extends Comparable<E1>, E2> implements Comparator<Pair<E1, E2>> {
+    /**
+     * Compares the first generic object of two pairs.
+    */
     public int compare(Pair<E1, E2> p1, Pair<E1, E2> p2) {
         E1 firstp1 = p1.getFirst();
         E1 firstp2 = p2.getFirst();
