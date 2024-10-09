@@ -34,8 +34,10 @@ public class Pair<E1, E2> {
         return String.format("(%s, %s)", first.toString(), second.toString());
     }
 
+    @SuppressWarnings("unchecked")
     public boolean equals(Object o) {
         if (o instanceof Pair) {
+            @SuppressWarnings("rawtypes")
             Pair<E1, E2> p = (Pair) o;
             return (this.first.equals(p.first) && this.second.equals(p.second));
         }
