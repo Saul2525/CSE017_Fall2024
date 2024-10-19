@@ -12,10 +12,12 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ * A class that use a priority queue to simulate how the printer processes printing requests and evaluate arithmetic expressions.
+*/
 public class Test {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
-
         boolean runProgram = true;
         do {
             try {
@@ -111,12 +113,17 @@ public class Test {
         scnr.close();
     }
 
+    /**
+     * Formats the time.
+     * @param time The time as a long.
+     * @return The formatted time.
+    */
     public static String formatTime(long time) {
-        long hours = (time / 3600000);
+        long days = (time / (24 * 3600000));
+        long hours = ((time % (24 * 3600000)) / 3600000);
         long minutes = ((time % 3600000) / 60000);
         long seconds = ((time % 60000) / 1000);
-        long milliseconds = (time % 1000);
 
-        return String.format("%02d:%02d:%02d:%02d", hours, minutes, seconds, milliseconds);
+        return String.format("%02d:%02d:%02d:%02d", days, hours, minutes, seconds);
     }
 }
