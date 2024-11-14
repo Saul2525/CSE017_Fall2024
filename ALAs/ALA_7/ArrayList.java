@@ -20,6 +20,7 @@ public class ArrayList<E> {
      * Default constructor creates the array with a default length of 10 and sets size to 0.
      * Time complexity: O(1).
     */
+    @SuppressWarnings("unchecked")
     public ArrayList() {
         elements = (E[]) new Object[10];
         size = 0;
@@ -30,6 +31,7 @@ public class ArrayList<E> {
      * Time complexity: O(1).
      * @param capacity length of the array elements
     */
+    @SuppressWarnings("unchecked")
     public ArrayList(int capacity) {
         elements = (E[]) new Object[capacity];
         size = 0;
@@ -142,6 +144,7 @@ public class ArrayList<E> {
      * Resize the length of the array 'elements' to the size of the list.
      * Time complexity: O(n) if trimming needed.
     */
+    @SuppressWarnings("unchecked")
     public void trimToSize() {
         if (size != elements.length) {
             E[] newElements = (E[]) new Object[size];
@@ -156,6 +159,7 @@ public class ArrayList<E> {
      * Grow the length of the array 'elements' by 1.5 if it is full.
      * Time complexity: O(n) if the size reaches the capacity.
     */
+    @SuppressWarnings("unchecked")
     private void ensureCapacity() {
         if (size >= elements.length) {
             int newCap = (int) (elements.length * 1.5);
@@ -379,6 +383,7 @@ public class ArrayList<E> {
      * Sorts the array randomly.
      * Time complexity: O(n^2).
     */
+    @SuppressWarnings({"unchecked", "rawtypes"})
     public void sort() {
         for (int i = 0; i < size; i++) {
             int minIndex = i;
